@@ -1,5 +1,5 @@
 const userReducer = () => {
-    return 'user';
+  return 'user';
 };
 
 export default userReducer;

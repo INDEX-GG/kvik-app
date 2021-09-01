@@ -1,18 +1,17 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import ThemeProvider from './src/state/context/ThemeCtx';
-import { Provider as StoreProvider } from 'react-redux';
+import {Provider as StoreProvider} from 'react-redux';
 import Screens from './Screens';
 import store from './src/state/store';
-import MainLayout from './src/UI/layouts/MainLayout';
 
-const App = (): ReactElement => {
-	return (
-		<StoreProvider store={store}>
-			<ThemeProvider>
-				<Screens />
-			</ThemeProvider>
-		</StoreProvider>
-	)
-}
+const App = (): JSX.Element => {
+  return (
+    <StoreProvider store={store}>
+      <ThemeProvider>
+        <Screens />
+      </ThemeProvider>
+    </StoreProvider>
+  );
+};
 
 export default App;

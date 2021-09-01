@@ -11,16 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		54EF57C626DF6ACD002BB83F /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57B626DF6ACD002BB83F /* Fontisto.ttf */; };
-		54EF57C726DF6ACD002BB83F /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57B726DF6ACD002BB83F /* Octicons.ttf */; };
-		54EF57C826DF6ACD002BB83F /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57B826DF6ACD002BB83F /* Feather.ttf */; };
-		54EF57C926DF6ACD002BB83F /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57B926DF6ACD002BB83F /* Entypo.ttf */; };
-		54EF57CB26DF6ACD002BB83F /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57BB26DF6ACD002BB83F /* MaterialCommunityIcons.ttf */; };
-		54EF57CC26DF6ACD002BB83F /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57BC26DF6ACD002BB83F /* AntDesign.ttf */; };
-		54EF57CD26DF6ACD002BB83F /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57BD26DF6ACD002BB83F /* Foundation.ttf */; };
-		54EF57CE26DF6ACD002BB83F /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57BE26DF6ACD002BB83F /* Ionicons.ttf */; };
-		54EF57D226DF6ACD002BB83F /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57C226DF6ACD002BB83F /* Zocial.ttf */; };
-		54EF57D526DF6ACD002BB83F /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57C526DF6ACD002BB83F /* MaterialIcons.ttf */; };
+		54EF57EC26DF84E3002BB83F /* kvikapp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54EF57EB26DF84D9002BB83F /* kvikapp.ttf */; };
 		6172F2D35A4C3AA820D92908 /* libPods-Kvik.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-Kvik.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-Kvik-KvikTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-Kvik-KvikTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -47,16 +38,24 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Kvik/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Kvik/main.m; sourceTree = "<group>"; };
 		1D0AE47A65C8663E3B452821 /* Pods-Kvik-KvikTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kvik-KvikTests.release.xcconfig"; path = "Target Support Files/Pods-Kvik-KvikTests/Pods-Kvik-KvikTests.release.xcconfig"; sourceTree = "<group>"; };
-		54EF57B626DF6ACD002BB83F /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
-		54EF57B726DF6ACD002BB83F /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
-		54EF57B826DF6ACD002BB83F /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
-		54EF57B926DF6ACD002BB83F /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
-		54EF57BB26DF6ACD002BB83F /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
-		54EF57BC26DF6ACD002BB83F /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
-		54EF57BD26DF6ACD002BB83F /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
-		54EF57BE26DF6ACD002BB83F /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
-		54EF57C226DF6ACD002BB83F /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
-		54EF57C526DF6ACD002BB83F /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		54EF57D626DF7054002BB83F /* Kvik.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Kvik.entitlements; path = Kvik/Kvik.entitlements; sourceTree = "<group>"; };
+		54EF57DB26DF74AB002BB83F /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		54EF57DC26DF74AB002BB83F /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		54EF57DD26DF74AB002BB83F /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		54EF57DE26DF74AB002BB83F /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		54EF57DF26DF74AB002BB83F /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		54EF57E026DF74AB002BB83F /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		54EF57E126DF74AB002BB83F /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		54EF57E226DF74AB002BB83F /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		54EF57E326DF74AB002BB83F /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		54EF57E426DF74AB002BB83F /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		54EF57E526DF74AB002BB83F /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		54EF57E626DF74AB002BB83F /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		54EF57E726DF74AB002BB83F /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		54EF57E826DF74AB002BB83F /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		54EF57E926DF74AB002BB83F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		54EF57EA26DF74AB002BB83F /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		54EF57EB26DF84D9002BB83F /* kvikapp.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = kvikapp.ttf; path = ../kvikapp.ttf; sourceTree = "<group>"; };
 		6423831EA8574132BED9D8CC /* libPods-Kvik.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kvik.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-Kvik-KvikTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kvik-KvikTests.debug.xcconfig"; path = "Target Support Files/Pods-Kvik-KvikTests/Pods-Kvik-KvikTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Kvik/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +105,8 @@
 		13B07FAE1A68108700A75B9A /* Kvik */ = {
 			isa = PBXGroup;
 			children = (
-				54EF57B526DF6ACD002BB83F /* Fonts */,
+				54EF57D626DF7054002BB83F /* Kvik.entitlements */,
+				54EF57DA26DF74AB002BB83F /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -127,19 +127,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		54EF57B526DF6ACD002BB83F /* Fonts */ = {
+		54EF57DA26DF74AB002BB83F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				54EF57B626DF6ACD002BB83F /* Fontisto.ttf */,
-				54EF57B726DF6ACD002BB83F /* Octicons.ttf */,
-				54EF57B826DF6ACD002BB83F /* Feather.ttf */,
-				54EF57B926DF6ACD002BB83F /* Entypo.ttf */,
-				54EF57BB26DF6ACD002BB83F /* MaterialCommunityIcons.ttf */,
-				54EF57BC26DF6ACD002BB83F /* AntDesign.ttf */,
-				54EF57BD26DF6ACD002BB83F /* Foundation.ttf */,
-				54EF57BE26DF6ACD002BB83F /* Ionicons.ttf */,
-				54EF57C226DF6ACD002BB83F /* Zocial.ttf */,
-				54EF57C526DF6ACD002BB83F /* MaterialIcons.ttf */,
+				54EF57DB26DF74AB002BB83F /* Fontisto.ttf */,
+				54EF57DC26DF74AB002BB83F /* Octicons.ttf */,
+				54EF57DD26DF74AB002BB83F /* Feather.ttf */,
+				54EF57EB26DF84D9002BB83F /* kvikapp.ttf */,
+				54EF57DE26DF74AB002BB83F /* Entypo.ttf */,
+				54EF57DF26DF74AB002BB83F /* FontAwesome5_Brands.ttf */,
+				54EF57E026DF74AB002BB83F /* MaterialCommunityIcons.ttf */,
+				54EF57E126DF74AB002BB83F /* AntDesign.ttf */,
+				54EF57E226DF74AB002BB83F /* Foundation.ttf */,
+				54EF57E326DF74AB002BB83F /* Ionicons.ttf */,
+				54EF57E426DF74AB002BB83F /* FontAwesome5_Solid.ttf */,
+				54EF57E526DF74AB002BB83F /* FontAwesome5_Regular.ttf */,
+				54EF57E626DF74AB002BB83F /* FontAwesome.ttf */,
+				54EF57E726DF74AB002BB83F /* Zocial.ttf */,
+				54EF57E826DF74AB002BB83F /* EvilIcons.ttf */,
+				54EF57E926DF74AB002BB83F /* SimpleLineIcons.ttf */,
+				54EF57EA26DF74AB002BB83F /* MaterialIcons.ttf */,
 			);
 			name = Fonts;
 			path = ../../../Fonts;
@@ -281,17 +288,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54EF57C626DF6ACD002BB83F /* Fontisto.ttf in Resources */,
-				54EF57CD26DF6ACD002BB83F /* Foundation.ttf in Resources */,
-				54EF57CE26DF6ACD002BB83F /* Ionicons.ttf in Resources */,
-				54EF57C926DF6ACD002BB83F /* Entypo.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				54EF57D226DF6ACD002BB83F /* Zocial.ttf in Resources */,
-				54EF57C826DF6ACD002BB83F /* Feather.ttf in Resources */,
-				54EF57C726DF6ACD002BB83F /* Octicons.ttf in Resources */,
-				54EF57CC26DF6ACD002BB83F /* AntDesign.ttf in Resources */,
-				54EF57D526DF6ACD002BB83F /* MaterialIcons.ttf in Resources */,
-				54EF57CB26DF6ACD002BB83F /* MaterialCommunityIcons.ttf in Resources */,
+				54EF57EC26DF84E3002BB83F /* kvikapp.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,7 +530,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Kvik/Kvik.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 64HC6HGXN4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Kvik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -558,7 +558,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Kvik/Kvik.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 64HC6HGXN4;
 				INFOPLIST_FILE = Kvik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

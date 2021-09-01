@@ -1,5 +1,5 @@
 const postsReducer = () => {
-    return 'posts';
+  return 'posts';
 };
 
 export default postsReducer;

@@ -1,5 +1,5 @@
 const authReducer = () => {
-    return 'auth';
+  return 'auth';
 };
 
 export default authReducer;
