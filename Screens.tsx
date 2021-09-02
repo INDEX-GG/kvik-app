@@ -3,6 +3,7 @@ import 'react-native-gesture-handler';
 import {
   createStackNavigator,
   CardStyleInterpolators,
+  HeaderStyleInterpolators
 } from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {Platform} from 'react-native';
@@ -14,10 +15,12 @@ import PlaceOffer from './screens/PlaceOffer';
 import Favorites from './screens/Favorites';
 import Registration from './screens/Registration';
 import Login from './screens/Login';
+import {useTheme} from './src/state/context/ThemeCtx';
 
 const Stack = createStackNavigator();
 
 const Screens = (): JSX.Element => {
+  const theme = useTheme();
   return (
     <NavigationContainer>
       <MainLayout>
@@ -25,18 +28,23 @@ const Screens = (): JSX.Element => {
           initialRouteName={'Home'}
           screenOptions={{
             headerMode: 'float',
-            headerStatusBarHeight: 12,
-            headerStyle: {backgroundColor: 'yellow'},
+            headerStatusBarHeight: 0,
+            headerStyle: {backgroundColor: theme.bg, height: 56},
+            headerTitleStyle: {color: theme.text},
+            headerTintColor: theme.text,
+            headerBackTitleVisible: false,
             cardStyleInterpolator:
               Platform.OS === 'ios'
                 ? CardStyleInterpolators.forHorizontalIOS
                 : CardStyleInterpolators.forScaleFromCenterAndroid,
-            cardStyle: {backgroundColor: '#fff'},
           }}>
           <Stack.Screen
             name="Home"
             component={Home}
-            options={{headerShown: false}}
+            options={{
+              headerShown: false,
+              headerStyleInterpolator: HeaderStyleInterpolators.forSlideUp,
+            }}
           />
           <Stack.Screen
             name="Messages"

@@ -1,8 +1,22 @@
 import {ReactElement} from 'react';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 export interface Child {
   children: ReactElement;
 }
+
+export type RootStackParamList = {
+  Home: undefined;
+  Messages: undefined;
+  PlaceOffer: undefined;
+  Favorites: undefined;
+  Profile: undefined;
+};
+
+export type HomeScreenProp = StackNavigationProp<
+  RootStackParamList,
+  'Messages'
+>;
 
 export interface themeShema {
   bg: '#fff' | '#000';
