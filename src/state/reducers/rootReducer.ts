@@ -1,7 +1,13 @@
 import {combineReducers} from 'redux';
-import authReducer from './authReducer';
+import authReducer, {AuthModel} from './authReducer';
 import postsReducer from './postsReducer';
 import userReducer from './userReducer';
+
+export interface rootModel {
+  auth: AuthModel;
+  user: string;
+  posts: string;
+}
 
 const rootReducer = combineReducers({
   auth: authReducer,

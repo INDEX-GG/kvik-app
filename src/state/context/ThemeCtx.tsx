@@ -15,13 +15,13 @@ const ThemeProvider = ({children}: Child): JSX.Element => {
   useEffect(() => {
     switch (colorShema) {
       case 'light':
-        return setTheme(darkTheme);
+        return setTheme(defaultTheme);
       case 'dark':
         return setTheme(darkTheme);
       case null:
-        return setTheme(darkTheme);
+        return setTheme(defaultTheme);
       default:
-        return setTheme(darkTheme);
+        return setTheme(defaultTheme);
     }
   }, [colorShema]);
 

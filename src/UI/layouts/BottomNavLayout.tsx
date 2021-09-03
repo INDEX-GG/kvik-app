@@ -5,7 +5,7 @@ import {Child} from '../../../types/types';
 import BottomNavigation from '../../components/BottomNavigation';
 import {useTheme} from '../../state/context/ThemeCtx';
 
-const MainLayout = ({children}: Child): JSX.Element => {
+const BottomNavLayout = ({children}: Child): JSX.Element => {
   const theme = useTheme();
   const styles = StyleSheet.create({
     wrapper: {
@@ -29,4 +29,4 @@ const MainLayout = ({children}: Child): JSX.Element => {
   );
 };
 
-export default MainLayout;
+export default BottomNavLayout;

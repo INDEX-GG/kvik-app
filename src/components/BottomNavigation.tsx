@@ -15,7 +15,7 @@ const BottomNavigation = (): JSX.Element => {
   const styles = StyleSheet.create({
     wrapper: {
       width: '100%',
-      height: 68,
+      height: 54,
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-around',
@@ -47,8 +47,8 @@ const BottomNavigation = (): JSX.Element => {
     },
     avatar: {
       backgroundColor: route === 'Profile' ? theme.prime : theme.second,
-      width: 32,
-      height: 32,
+      width: 24,
+      height: 24,
     },
   });
 
@@ -59,7 +59,7 @@ const BottomNavigation = (): JSX.Element => {
         onPress={() => nav.navigate('Home')}>
         <KvikIcons
           name="logo"
-          size={32}
+          size={24}
           color={route === 'Home' ? theme.prime : theme.second}
         />
         <Text style={route === 'Home' ? styles.textHl : styles.text}>
@@ -71,7 +71,7 @@ const BottomNavigation = (): JSX.Element => {
         onPress={() => nav.navigate('Messages')}>
         <KvikIcons
           name="message"
-          size={32}
+          size={24}
           color={route === 'Messages' ? theme.prime : theme.second}
         />
         <Text style={route === 'Messages' ? styles.textHl : styles.text}>
@@ -81,7 +81,7 @@ const BottomNavigation = (): JSX.Element => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => nav.navigate('PlaceOffer')}>
-        <Icon name="add-circle" color={theme.prime} size={46} />
+        <Icon name="add-circle" color={theme.prime} size={34} />
         <Text style={route === 'PlaceOffer' ? styles.textHl : styles.text}>
           Разместить
         </Text>
@@ -91,7 +91,7 @@ const BottomNavigation = (): JSX.Element => {
         onPress={() => nav.navigate('Favorites')}>
         <KvikIcons
           name="like"
-          size={32}
+          size={24}
           color={route === 'Favorites' ? theme.prime : theme.second}
         />
         <Text style={route === 'Favorites' ? styles.textHl : styles.text}>
@@ -104,7 +104,7 @@ const BottomNavigation = (): JSX.Element => {
         <Avatar
           size="small"
           rounded
-          icon={{name: 'person', size: 28, color: theme.bg}}
+          icon={{name: 'person', size: 20, color: theme.bg}}
           containerStyle={styles.avatar}
         />
         <Text style={route === 'Profile' ? styles.textHl : styles.text}>
