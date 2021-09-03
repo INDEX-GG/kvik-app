@@ -23,7 +23,6 @@ const Stack = createStackNavigator();
 
 const Screens = (): JSX.Element => {
   const {isAuth} = useSelector((state: rootModel) => state.auth);
-  console.log(isAuth);
   const theme = useTheme();
   return (
     <NavigationContainer>

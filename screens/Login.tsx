@@ -21,6 +21,7 @@ const Login = (): JSX.Element => {
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [visible, setVisible] = useState(true);
+  const [valid, setValid] = useState(false);
   const theme = useTheme();
   const themes = StyleSheet.create({
     wrapper: {
@@ -37,12 +38,24 @@ const Login = (): JSX.Element => {
   const handleLogin = () => {
     if (phone.length === 0) {
       setPhoneError('Введите номер');
-    } else if (password.length === 0) {
+    } else {
+      setPhoneError('');
+    }
+    if (password.length === 0) {
       setPasswordError('Введите пароль');
     } else {
+      setPhoneError('');
+    }
+    if (phone.length === 0 && password.length === 0) {
+      setValid(false);
+    } else {
+      setValid(true);
+    }
+    if (valid) {
       dispatch(signIn({phone: `+${phone.replace(/\D/g, '')}`, password}));
     }
   };
+
   const {isset} = useSelector((state: rootModel) => state.auth);
 
   useEffect(() => {
@@ -58,6 +71,8 @@ const Login = (): JSX.Element => {
         inputContainerStyle={[themes.input, styles.input]}
         inputStyle={themes.text}
         placeholder="+7 (999) 777-77-77"
+        keyboardType="phone-pad"
+        autoCompleteType="tel"
         maxLength={18}
         placeholderTextColor={theme.second}
         value={phone}
@@ -73,6 +88,7 @@ const Login = (): JSX.Element => {
         placeholder="Пароль"
         placeholderTextColor={theme.second}
         value={password}
+        autoCompleteType="password"
         secureTextEntry={visible}
         onChangeText={text => setPassword(text)}
         errorMessage={passwordError}

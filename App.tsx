@@ -4,7 +4,7 @@ import {Provider as StoreProvider} from 'react-redux';
 import Screens from './Screens';
 import store from './src/state/store';
 import BottomNavigationCtx from './src/state/context/BottomNavigationCtx';
-console.log(store);
+
 const App = (): JSX.Element => {
   return (
     <StoreProvider store={store}>
