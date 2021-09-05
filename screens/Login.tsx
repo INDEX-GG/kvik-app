@@ -4,6 +4,7 @@ import {StyleSheet, View} from 'react-native';
 import {Icon, Input} from 'react-native-elements';
 import {useDispatch, useSelector} from 'react-redux';
 import {phoneFormat} from '../src/lib/phoneFormat';
+import {useForm, Controller} from 'react-hook-form';
 import {signIn} from '../src/state/actions/auth.actions';
 import {useTheme} from '../src/state/context/ThemeCtx';
 import {rootModel} from '../src/state/reducers/rootReducer';
@@ -16,12 +17,9 @@ export interface AuthData {
 
 const Login = (): JSX.Element => {
   const dispatch = useDispatch();
-  const [phone, setPhone] = useState('');
-  const [phoneError, setPhoneError] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const {handleSubmit, control, setError} = useForm<AuthData>();
   const [visible, setVisible] = useState(true);
-  const [valid, setValid] = useState(false);
+
   const theme = useTheme();
   const themes = StyleSheet.create({
     wrapper: {
@@ -35,76 +33,92 @@ const Login = (): JSX.Element => {
     },
   });
 
-  const handleLogin = () => {
-    if (phone.length === 0) {
-      setPhoneError('Введите номер');
-    } else {
-      setPhoneError('');
-    }
-    if (password.length === 0) {
-      setPasswordError('Введите пароль');
-    } else {
-      setPhoneError('');
-    }
-    if (phone.length === 0 && password.length === 0) {
-      setValid(false);
-    } else {
-      setValid(true);
-    }
-    if (valid) {
-      dispatch(signIn({phone: `+${phone.replace(/\D/g, '')}`, password}));
-    }
+  const handleLogin = (data: AuthData) => {
+    data.phone = `+${data.phone.replace(/\D/g, '')}`;
+    dispatch(signIn(data));
   };
 
   const {isset} = useSelector((state: rootModel) => state.auth);
 
   useEffect(() => {
     if (isset) {
-      setPasswordError('Неверные данные');
+      setError('password', {type: 'validate', message: 'Неверные данные'});
     }
-  }, [isset]);
+  }, [isset, setError]);
 
   return (
     <View style={[themes.wrapper, styles.wrapper]}>
-      <Input
-        containerStyle={styles.container}
-        inputContainerStyle={[themes.input, styles.input]}
-        inputStyle={themes.text}
-        placeholder="+7 (999) 777-77-77"
-        keyboardType="phone-pad"
-        autoCompleteType="tel"
-        maxLength={18}
-        placeholderTextColor={theme.second}
-        value={phone}
-        onChangeText={text => setPhone(phoneFormat(text))}
-        errorMessage={phoneError}
-        leftIcon={
-          <Icon name="phone" type="entypo" color={theme.prime} size={24} />
-        }
-      />
-      <Input
-        containerStyle={styles.container}
-        inputContainerStyle={[themes.input, styles.input]}
-        placeholder="Пароль"
-        placeholderTextColor={theme.second}
-        value={password}
-        autoCompleteType="password"
-        secureTextEntry={visible}
-        onChangeText={text => setPassword(text)}
-        errorMessage={passwordError}
-        leftIcon={
-          <Icon name="lock" type="entypo" color={theme.prime} size={24} />
-        }
-        rightIcon={
-          <Icon
-            onPress={() => setVisible(p => !p)}
-            name={visible ? 'eye' : 'eye-with-line'}
-            color={theme.second}
-            type="entypo"
+      <Controller
+        name="phone"
+        control={control}
+        defaultValue=""
+        render={({field: {onChange, value}, fieldState: {error}}) => (
+          <Input
+            containerStyle={styles.container}
+            inputContainerStyle={[themes.input, styles.input]}
+            inputStyle={themes.text}
+            placeholder="+7 (999) 777-77-77"
+            keyboardType="phone-pad"
+            autoCompleteType="tel"
+            maxLength={18}
+            placeholderTextColor={theme.second}
+            value={value}
+            onChangeText={text => onChange(phoneFormat(text))}
+            errorMessage={error ? error.message : undefined}
+            leftIcon={
+              <Icon name="phone" type="entypo" color={theme.prime} size={24} />
+            }
           />
-        }
+        )}
+        rules={{
+          required: 'Введите номер',
+          minLength: {
+            value: 17,
+            message: 'Введите номер полностью',
+          },
+        }}
       />
-      <KvikButton onPress={() => handleLogin()} title="Войти" />
+
+      <Controller
+        name="password"
+        control={control}
+        defaultValue=""
+        render={({field: {onChange, value}, fieldState: {error}}) => (
+          <Input
+            containerStyle={styles.container}
+            inputContainerStyle={[themes.input, styles.input]}
+            placeholder="Пароль"
+            placeholderTextColor={theme.second}
+            value={value}
+            autoCompleteType="password"
+            secureTextEntry={visible}
+            onChangeText={onChange}
+            errorMessage={error ? error.message : undefined}
+            leftIcon={
+              <Icon name="lock" type="entypo" color={theme.prime} size={24} />
+            }
+            rightIcon={
+              <Icon
+                onPress={() => setVisible(p => !p)}
+                name={visible ? 'eye' : 'eye-with-line'}
+                color={theme.second}
+                type="entypo"
+              />
+            }
+          />
+        )}
+        rules={{
+          required: 'Введите пароль',
+          //  minLength: {
+          //    value: 8,
+          //    message: 'минимум 8 символов',
+          //  },
+        }}
+      />
+      <KvikButton
+        onPress={handleSubmit(data => handleLogin(data))}
+        title="Войти"
+      />
     </View>
   );
 };

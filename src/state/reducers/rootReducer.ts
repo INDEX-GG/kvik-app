@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux';
 import authReducer, {AuthModel} from './authReducer';
-import postsReducer from './postsReducer';
-import userReducer from './userReducer';
+import postsReducer, {PostModel} from './postsReducer';
+import userReducer, {UserModel} from './userReducer';
 
 export interface rootModel {
   auth: AuthModel;
-  user: string;
-  posts: string;
+  user: UserModel;
+  posts: PostModel[];
 }
 
 const rootReducer = combineReducers({
