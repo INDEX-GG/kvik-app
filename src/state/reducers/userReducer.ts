@@ -1,4 +1,4 @@
-import {GET_USER} from '../../constants';
+import {GET_USER, SET_LIKE} from '../../constants';
 
 export interface FavoritesTypes {
   post_id: number;
@@ -20,7 +20,8 @@ export interface UserModel {
 
 export interface ActionUser {
   type: string;
-  user: UserModel;
+  user?: UserModel;
+  like?: FavoritesTypes;
 }
 
 const initialState = {} as UserModel;
@@ -29,6 +30,14 @@ const userReducer = (state = initialState, action: ActionUser): UserModel => {
   switch (action.type) {
     case GET_USER:
       return action.user;
+    case SET_LIKE:
+      return {
+        ...state,
+        favorites:
+          state.favorites.length > 0
+            ? [...state.favorites, action.like]
+            : [action.like],
+      };
     default:
       return state;
   }

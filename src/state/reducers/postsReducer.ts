@@ -7,7 +7,7 @@ export interface verifyM {
 export interface PostModel {
   address: string;
   category_id: string[];
-  commercial: number; //требуется строгая типизация
+  commercial: 0 | 1 | 2; //требуется строгая типизация
   created_at: Date;
   delivery: boolean;
   email: string | null;

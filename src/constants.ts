@@ -7,5 +7,6 @@ export const AUTH_ERROR = 'AUTH_ERROR';
 export const SIGN_OUT = 'SIGN_OUT';
 //user
 export const GET_USER = 'GET_USER';
+export const SET_LIKE = 'SET_LIKE';
 //posts
 export const GET_POSTS = 'GET_POSTS';

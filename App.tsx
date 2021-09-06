@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ThemeProvider from './src/state/context/ThemeCtx';
 import {Provider as StoreProvider} from 'react-redux';
 import Screens from './Screens';
@@ -16,6 +16,7 @@ const App = (): JSX.Element => {
   (store.dispatch as ThunkDispatch<rootModel, unknown, ActionAuth>)(
     getUserId(),
   );
+  //Все объявления
   (store.dispatch as ThunkDispatch<rootModel, unknown, ActionPosts>)(
     getPostsData(),
   );

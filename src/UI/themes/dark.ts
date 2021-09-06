@@ -8,6 +8,7 @@ const theme = (): themeShema => {
     prime: '#00a0ab',
     second: '#e9e9e9',
     highlight: '#5a5a5a',
+    yellow: '#fff6a5',
   };
 };
 
