@@ -1,9 +1,10 @@
-import {AUTH_ERROR, SIGN_IN, SIGN_OUT} from '../../constants';
+import {AUTH_ERROR, SIGN_IN, SIGN_OUT, SIGN_UP} from '../../constants';
 
 export interface AuthModel {
   isAuth: boolean;
   idUser?: string | number;
   isset?: boolean;
+  exist?: boolean;
 }
 
 export interface ActionAuth {
@@ -20,6 +21,10 @@ const authReducer = (state = initialState, action: ActionAuth): AuthModel => {
       return {isAuth: true, idUser: action.idUser};
     case AUTH_ERROR:
       return {isAuth: false, isset: action.error};
+    case SIGN_UP:
+      return {isAuth: true, idUser: action.idUser};
+    case AUTH_ERROR:
+      return {isAuth: false, exist: action.error};
     case SIGN_OUT:
       return {isAuth: false};
     default:

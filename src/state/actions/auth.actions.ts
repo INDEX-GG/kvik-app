@@ -1,8 +1,15 @@
 import {AuthData} from '../../../screens/Login';
-import {AUTH_ERROR, SIGN_IN, SIGN_OUT} from '../../constants';
+import {
+  AUTH_ERROR,
+  REG_ERROR,
+  SIGN_IN,
+  SIGN_OUT,
+  SIGN_UP,
+} from '../../constants';
 import {getDataByPost} from '../../lib/fetch';
 import {ActionAuth, AuthModel} from '../reducers/authReducer';
 import * as Keychain from 'react-native-keychain';
+import {RegData, responseReg} from '../../../screens/Registration';
 
 export const signIn = (
   authData: AuthData,
@@ -34,6 +41,28 @@ export const getUserId = (): ((
     }
   };
   return getFromKeychain;
+};
+
+export const signUp = (
+  data: RegData,
+): ((dispatch: (arg0: ActionAuth) => void) => Promise<void>) => {
+  const regUser = async (dispatch: (arg0: ActionAuth) => void) => {
+    const res = await getDataByPost<responseReg>('/api/setApi', data);
+    console.log(res);
+    switch (res.message) {
+      case 'user created':
+        console.log('user created');
+        await Keychain.setGenericPassword(`${res.id}`, `${res.id}`);
+        console.log('session');
+        return dispatch({
+          type: SIGN_UP,
+          idUser: `${res.id}`,
+        });
+      case 'user already exists':
+        return dispatch({type: REG_ERROR, error: true});
+    }
+  };
+  return regUser;
 };
 
 export const signOut = (): ((

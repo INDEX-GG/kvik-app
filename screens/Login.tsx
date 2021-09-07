@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Icon, Input} from 'react-native-elements';
@@ -9,6 +10,7 @@ import {signIn} from '../src/state/actions/auth.actions';
 import {useTheme} from '../src/state/context/ThemeCtx';
 import {rootModel} from '../src/state/reducers/rootReducer';
 import KvikButton from '../src/UI/KvikButton';
+import {HomeScreenProp} from '../types/types';
 
 export interface AuthData {
   phone: string;
@@ -16,6 +18,7 @@ export interface AuthData {
 }
 
 const Login = (): JSX.Element => {
+  const nav = useNavigation<HomeScreenProp>();
   const dispatch = useDispatch();
   const {handleSubmit, control, setError} = useForm<AuthData>();
   const [visible, setVisible] = useState(true);
@@ -118,6 +121,10 @@ const Login = (): JSX.Element => {
       <KvikButton
         onPress={handleSubmit(data => handleLogin(data))}
         title="Войти"
+      />
+      <KvikButton
+        title="Регистрация"
+        onPress={() => nav.navigate('Registration')}
       />
     </View>
   );

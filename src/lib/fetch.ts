@@ -1,15 +1,21 @@
 import {AuthData} from '../../screens/Login';
 import {getUserData} from '../../screens/Profile';
+import {RegData} from '../../screens/Registration';
 import {BASE_URL, STATIC_URL} from '../constants';
 import {sendLikeComment} from '../state/actions/user.actions';
 import {PostModel} from '../state/reducers/postsReducer';
 import {UserModel} from '../state/reducers/userReducer';
 import {text2Bool} from './services';
 
+interface regDataPost {
+  phone: string;
+}
+
 export const getDataByPost = async <T>(
   url: string,
-  data: AuthData | getUserData | sendLikeComment,
+  data: AuthData | getUserData | sendLikeComment | regDataPost | RegData,
 ): Promise<T> => {
+  console.log(data);
   const response = await fetch(`${BASE_URL}${url}`, {
     method: 'POST',
     headers: {

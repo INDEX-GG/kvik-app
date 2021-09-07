@@ -15,6 +15,8 @@ type RootStackParamList = {
   Favorites: undefined;
   Profile: undefined;
   Offer: OfferScreenProps;
+  Registration: undefined;
+  Login: undefined;
 };
 
 type HomeScreenProp = StackNavigationProp<RootStackParamList, 'Home'>;
