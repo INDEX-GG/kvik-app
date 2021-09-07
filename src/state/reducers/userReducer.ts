@@ -2,7 +2,7 @@ import {GET_USER, SET_LIKE} from '../../constants';
 
 export interface FavoritesTypes {
   post_id: number;
-  comment: string;
+  comment: string | '';
   condition: boolean;
 }
 
@@ -35,7 +35,16 @@ const userReducer = (state = initialState, action: ActionUser): UserModel => {
         ...state,
         favorites:
           state.favorites.length > 0
-            ? [...state.favorites, action.like as FavoritesTypes]
+            ? state.favorites.filter(
+                fav => fav.post_id === action.like?.post_id,
+              ).length === 1
+              ? [
+                  ...state.favorites.filter(
+                    fav => fav.post_id !== action.like?.post_id,
+                  ),
+                  action.like as FavoritesTypes,
+                ]
+              : [...state.favorites, action.like as FavoritesTypes]
             : [action.like as FavoritesTypes],
       };
     default:

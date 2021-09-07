@@ -1,13 +1,13 @@
-import {GET_USER} from '../../constants';
+import {GET_USER, SET_LIKE} from '../../constants';
 import {getDataByPost, getUser} from '../../lib/fetch';
 import {ActionUser, FavoritesTypes} from '../reducers/userReducer';
 
 export interface postLikeComment extends FavoritesTypes {
-  userId: string | number;
+  idUser?: string | number;
 }
 
 export interface sendLikeComment {
-  userId: string;
+  user_id: string;
   post_id: string;
   comment: string;
   condition: string;
@@ -24,19 +24,20 @@ export const getUserData = (
 };
 
 export const setLikeAndComment = ({
-  userId,
+  idUser,
   post_id,
   comment,
   condition,
-}: postLikeComment) => {
+}: postLikeComment): ActionUser => {
   const sendData = {
-    userId: `${userId}`,
+    user_id: `${idUser}`,
     post_id: `${post_id}`,
     comment: `${comment}`,
     condition: `${condition}`,
   };
-  const LikeComment = async dispatch => {
-    const res = await getDataByPost('/api/favorites', sendData);
-  };
-  return LikeComment;
+  console.log(sendData);
+  getDataByPost('/api/favorites', sendData)
+    .then(r => console.log(r))
+    .catch(e => console.log(e));
+  return {type: SET_LIKE, like: {post_id, comment, condition}};
 };

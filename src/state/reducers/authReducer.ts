@@ -2,7 +2,7 @@ import {AUTH_ERROR, SIGN_IN, SIGN_OUT} from '../../constants';
 
 export interface AuthModel {
   isAuth: boolean;
-  idUser?: string;
+  idUser?: string | number;
   isset?: boolean;
 }
 

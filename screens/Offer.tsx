@@ -1,10 +1,21 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+import {OfferScreenProps, routeProps} from '../types/types';
 
-const Offer = (): JSX.Element => {
+interface OfferRouteProps extends routeProps {
+  params: OfferScreenProps;
+}
+interface OfferProps {
+  route: OfferRouteProps;
+}
+
+const Offer = ({route}: OfferProps): JSX.Element => {
+  const offer = route.params.offer;
   return (
     <View>
-      <Text>Offer</Text>
+      <Text>{offer.title}</Text>
+      <Text>{offer.price}</Text>
+      <Text>{offer.address}</Text>
     </View>
   );
 };

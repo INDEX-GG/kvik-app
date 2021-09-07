@@ -1,12 +1,15 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Icon} from 'react-native-elements';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {date2str, ToRubles} from '../lib/services';
+import {setLikeAndComment} from '../state/actions/user.actions';
 import {useTheme} from '../state/context/ThemeCtx';
 import {PostModel} from '../state/reducers/postsReducer';
 import {rootModel} from '../state/reducers/rootReducer';
 import {FavoritesTypes} from '../state/reducers/userReducer';
+import {HomeScreenProp} from '../../types/types';
 
 export interface KvikOfferCardProps {
   offer: PostModel;
@@ -46,10 +49,13 @@ const KvikOfferCard = ({
   offer,
   size = 'default',
 }: KvikOfferCardProps): JSX.Element => {
+  const dispatch = useDispatch();
+  const nav = useNavigation<HomeScreenProp>();
   const {id, photo, price, title, address, created_at, commercial} = offer;
   const {favorites} = useSelector((state: rootModel) => state.user);
-  console.log(favorites);
+  const {idUser} = useSelector((state: rootModel) => state.auth);
   const theme = useTheme();
+  const likeCondition = likeRender(favorites, +id);
   const styles = StyleSheet.create({
     wrapper: {
       width:
@@ -70,15 +76,24 @@ const KvikOfferCard = ({
       <TouchableOpacity
         activeOpacity={0.8}
         style={[staticStyles.container, styles.container]}
-        onPress={() => console.log('click')}>
+        onPress={() => nav.navigate('Offer', {offer: offer})}>
         <View style={staticStyles.imageContainer}>
           <Icon
             size={30}
             iconStyle={staticStyles.icon}
             containerStyle={staticStyles.iconContainer}
             color={'#fff'}
-            name={likeRender(favorites, +id) ? 'favorite' : 'favorite-outline'}
-            onPress={() => console.log('like')}
+            name={likeCondition ? 'favorite' : 'favorite-outline'}
+            onPress={() =>
+              dispatch(
+                setLikeAndComment({
+                  idUser: idUser,
+                  post_id: +id,
+                  comment: '',
+                  condition: !likeCondition,
+                }),
+              )
+            }
           />
           <Image
             style={staticStyles.image}

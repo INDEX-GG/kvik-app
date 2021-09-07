@@ -18,6 +18,7 @@ import {useTheme} from './src/state/context/ThemeCtx';
 import SaveAreaLayout from './src/UI/layouts/SaveAreaLayout';
 import {useSelector} from 'react-redux';
 import {rootModel} from './src/state/reducers/rootReducer';
+import Offer from './screens/Offer';
 
 const Stack = createStackNavigator();
 
@@ -76,6 +77,11 @@ const Screens = (): JSX.Element => {
               options={{
                 headerShown: false,
               }}
+            />
+            <Stack.Screen
+              name="Offer"
+              component={Offer}
+              options={{headerTitle: ''}}
             />
           </Stack.Navigator>
         </BottomNavLayout>
