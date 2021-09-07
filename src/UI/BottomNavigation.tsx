@@ -3,7 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Avatar, Icon} from 'react-native-elements';
 import {useTheme} from '../state/context/ThemeCtx';
-import KvikIcons from '../UI/KvikIcons';
+import KvikIcons from './KvikIcons';
 import {HomeScreenProp} from '../../types/types';
 import {useBottomNav} from '../state/context/BottomNavigationCtx';
 import {useSelector} from 'react-redux';
@@ -126,7 +126,7 @@ const staticStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'flex-end',
-    elevation: 25,
+    elevation: 15,
     shadowOffset: {width: 0, height: -15},
     shadowOpacity: 0.05,
     shadowColor: '#000',

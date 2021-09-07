@@ -12,9 +12,7 @@ export interface getUserData {
 }
 
 const Profile = (): JSX.Element => {
-  const {name, phone, createdAt} = useSelector(
-    (state: rootModel) => state.user,
-  );
+  const {name, phone} = useSelector((state: rootModel) => state.user);
   const dispatch = useDispatch();
   const {setRoute} = useBottomNav();
 

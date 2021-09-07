@@ -1,13 +1,14 @@
 import {AuthData} from '../../screens/Login';
 import {getUserData} from '../../screens/Profile';
 import {BASE_URL, STATIC_URL} from '../constants';
+import {sendLikeComment} from '../state/actions/user.actions';
 import {PostModel} from '../state/reducers/postsReducer';
 import {UserModel} from '../state/reducers/userReducer';
 import {text2Bool} from './services';
 
 export const getDataByPost = async <T>(
   url: string,
-  data: AuthData | getUserData,
+  data: AuthData | getUserData | sendLikeComment,
 ): Promise<T> => {
   const response = await fetch(`${BASE_URL}${url}`, {
     method: 'POST',

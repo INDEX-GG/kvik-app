@@ -36,7 +36,7 @@ const commercialView = (
 
 const likeRender = (favorites: FavoritesTypes[], id: number): boolean => {
   const res = favorites?.filter(fav => fav.post_id === id);
-  if (res.length === 1) {
+  if (res?.length === 1) {
     return res[0].condition;
   }
   return false;

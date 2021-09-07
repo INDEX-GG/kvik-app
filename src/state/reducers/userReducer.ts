@@ -10,12 +10,12 @@ export interface UserModel {
   about: string | null;
   createdAt: Date;
   email: string | null;
-  favorites: FavoritesTypes[];
+  favorites: FavoritesTypes[] | [];
   name: string;
   phone: string;
   raiting: number | null;
   subscriptions: '[]' | string; //типизировать в функции getUser
-  userPhoto: string | undefined;
+  userPhoto?: string;
 }
 
 export interface ActionUser {
@@ -29,14 +29,14 @@ const initialState = {} as UserModel;
 const userReducer = (state = initialState, action: ActionUser): UserModel => {
   switch (action.type) {
     case GET_USER:
-      return action.user;
+      return action.user as UserModel;
     case SET_LIKE:
       return {
         ...state,
         favorites:
           state.favorites.length > 0
-            ? [...state.favorites, action.like]
-            : [action.like],
+            ? [...state.favorites, action.like as FavoritesTypes]
+            : [action.like as FavoritesTypes],
       };
     default:
       return state;
